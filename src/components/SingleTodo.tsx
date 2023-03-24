@@ -49,7 +49,7 @@ const SingleTodo: FC<IProps> = ({ todo, setTodoList }) => {
 
   return (
     <form
-      className="content__todos__form-single"
+      className="container__todos__form-single"
       onSubmit={(e) => {
         e.preventDefault();
         todoEdit(todo.id);
@@ -59,17 +59,17 @@ const SingleTodo: FC<IProps> = ({ todo, setTodoList }) => {
       {isEditable ? (
         <input
           ref={inputRef}
-          className="content__todos__single-text"
+          className="container__todos__single-text"
           type="text"
           value={editText}
           onChange={(e) => setEditText(e.target.value)}
         />
       ) : todo.isDone ? (
-        <s className="content__todos__single-text" key={todo.id}>
+        <s className="container__todos__single-text" key={todo.id}>
           {todo.text}
         </s>
       ) : (
-        <span className="content__todos__single-text" key={todo.id}>
+        <span className="container__todos__single-text" key={todo.id}>
           {todo.text}
         </span>
       )}

@@ -49,29 +49,60 @@
    box-shadow: 0 0 5px #000;
 }
 
-.content__todos{
-   display: block;
-   width: 100%;
+.container__todos{
+   display: flex;
+   flex-direction:row;
+   justify-container: space-between;
+   align-items: flex-start;
+   width: 95%;
+   margin-top: 10px;
 }
 
-.content__todos__list{
+.container__todos__list{
     display : flex;
-    justify-content: space-evenly;
-    width: 90%;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    width: 47.5%;
     margin:auto;
+    border-radius: 5px;
+    padding: 5px 5px 30px 5px;
+    border: 1px solid #1c949c;
+    background-color: #24c1cc;
+    box-shadow: -1px 4px 31px -4px rgba(0,0,0,0.49);
 }
 
-.content__todos__form-single{
+.completed{
+    background-color: #e64141;
+
+}
+
+.container__todos__heading{
+    font-size: 20px;
+    padding: 8px;
+    margin: 8px 0 0;
+    color: #FFF;
+    width: 100%;
+}
+
+.container__todos__form-single{
     display : flex;
     flex-direction: row;
-    width: 30%;
+    align-items: center;
+    width: 95%;
     border-radius: 5px;
     padding: 20px ;
     margin-top: 15px;
     background: linear-gradient(0deg, rgba(251,236,90,1) 0%, rgb(238, 182, 39) 55%, rgba(255,197,73,1) 100%);
+    transition: all  0.2s;
 }
-.content__todos__single-text{
+
+.container__todos__form-single:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px  #000000a4;
+  
+}
+
+.container__todos__single-text{
     flex: 1;
     padding: 5px;
     /* border: solid  1px #bd3f3f; */
@@ -79,7 +110,7 @@
     margin-right: auto;
 }
 
-.content__todos__single-text:focus{
+.container__todos__single-text:focus{
     outline: none;
 }
 .icon{
@@ -88,20 +119,32 @@
     cursor: pointer;
 }
 
-.content__todos__form-single__input-edit{
+.container__todos__form-single__input-edit{
     padding-left: 2px;
     margin-top: 5px;
     height:30px;
     width: 100%;
 }
 
-@media(max-width: 700px){
-    .content__todos__list{
-        width: 95%;
+@media(max-width: 1100px){
+    .container__todos__list{
+        width: 45%;
         margin:auto;
     }
-    .content__todos__form-single{
+
+}
+
+@media(max-width: 700px){
+
+    .container__todos{
+        flex-direction:column;
+    }
+    .container__todos__list{
         width: 100%;
+        margin: 0 5px;
+    }
+    .container__todos__form-single{
+        width: 95%;
     }
 
 }
